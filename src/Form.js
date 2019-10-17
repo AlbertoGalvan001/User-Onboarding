@@ -10,6 +10,7 @@ const UserForm = ({ values, touched, errors, status }) => {
     }, [status])
     return (
         <div className="user-form">
+            <h1>User Form</h1>
             <Form>
                 <Field type="text"
                     name="name"
@@ -17,18 +18,21 @@ const UserForm = ({ values, touched, errors, status }) => {
                 {touched.name && errors.name && (
                     <p className="error">{errors.name}</p>
                 )}
+                <br />
                 <Field type="text"
                     name="email"
                     placeholder="Email" />
                 {touched.email && errors.email && (
                     <p className="error">{errors.email}</p>
                 )}
+                <br />
                 <Field type="text"
                     name="password"
                     placeholder="Password" />
                 {touched.password && errors.password && (
                     <p className="error">{errors.password}</p>
                 )}
+                <br />
                 <label className="checkbox-container">
                     {" "}
                     Terms Of Service
@@ -39,6 +43,7 @@ const UserForm = ({ values, touched, errors, status }) => {
                     />
                     <span className="checkmark" />
                 </label>
+                <br />
 
                 <button type="submit">Submit</button>
             </Form>
