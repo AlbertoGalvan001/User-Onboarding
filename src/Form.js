@@ -69,9 +69,9 @@ const FormikUserForm = withFormik({
         };
     },
     validationSchema: Yup.object().shape({
-        name: Yup.string().required(),
+        name: Yup.string().required().min(2),
         email: Yup.string().required(),
-        password: Yup.string().required()
+        password: Yup.string().required().min(4),
     }),
     handleSubmit(values, { setStatus }) {
         axios.post(' https://reqres.in/api/users/', values)
